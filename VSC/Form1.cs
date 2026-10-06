@@ -115,9 +115,9 @@ namespace VSC
             timerUiRefresh.Tick += (s, ev) => UpdateUiCounters();
             timerUiRefresh.Start();
 
-            AppendCameraLog("SYS", "Camera Keyence VS-C Simulator sáºµn sĂ ng (Port 8500, FTP Port 21).", Color.Cyan);
-            AppendPrinterLog("SYS", "MĂ¡y In POD / TIJ Simulator sáºµn sĂ ng (Port 1997/2030, Framing [STX]...[ETX]).", Color.Cyan);
-            AppendInterlockLog("Há»‡ thá»‘ng liĂªn há»£p Camera & MĂ¡y In Ä‘Ă£ khá»Ÿi táº¡o thĂ nh cĂ´ng.", Color.LightSkyBlue);
+            AppendCameraLog("SYS", "Camera Keyence VS-C Simulator sẵn sàng (Port 8500, FTP Port 21).", Color.Cyan);
+            AppendPrinterLog("SYS", "Máy In POD / TIJ Simulator sẵn sàng (Port 1997/2030, Framing [STX]...[ETX]).", Color.Cyan);
+            AppendInterlockLog("Hệ thống liên hợp Camera & Máy In đã khởi tạo thành công.", Color.LightSkyBlue);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -162,18 +162,18 @@ namespace VSC
 
                 Task.Run(() => CamListenForClientsAsync(_camTcpCts.Token));
 
-                btnCamServerToggle.Text = "Dá»ªNG CAMERA SERVER";
+                btnCamServerToggle.Text = "DỪNG CAMERA SERVER";
                 btnCamServerToggle.BackColor = Color.FromArgb(191, 97, 106);
                 pnlCamStatus.BackColor = Color.LimeGreen;
-                lblCamStatus.Text = $"Server: Äang cháº¡y ({port})";
+                lblCamStatus.Text = $"Server: Đang chạy ({port})";
                 lblCamStatus.ForeColor = Color.FromArgb(163, 190, 140);
 
-                AppendCameraLog("SYS", $"Camera TCP Server khá»Ÿi cháº¡y táº¡i port {port}. FTP Server port {ftpPort}.", Color.LimeGreen);
+                AppendCameraLog("SYS", $"Camera TCP Server khởi chạy tại port {port}. FTP Server port {ftpPort}.", Color.LimeGreen);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lá»—i khi khá»Ÿi Ä‘á»™ng Camera Server: " + ex.Message, "Lá»—i Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                AppendCameraLog("ERR", "Lá»—i start Camera Server: " + ex.Message, Color.Red);
+                MessageBox.Show("Lỗi khi khởi động Camera Server: " + ex.Message, "Lỗi Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                AppendCameraLog("ERR", "Lỗi start Camera Server: " + ex.Message, Color.Red);
             }
         }
 
@@ -197,21 +197,21 @@ namespace VSC
                     _camConnectedClients.Clear();
                 }
 
-                btnCamServerToggle.Text = "KHá»I Äá»˜NG CAMERA SERVER";
+                btnCamServerToggle.Text = "KHỞI ĐỘNG CAMERA SERVER";
                 btnCamServerToggle.BackColor = Color.FromArgb(46, 139, 87);
                 pnlCamStatus.BackColor = Color.Red;
-                lblCamStatus.Text = "Server: ÄĂ£ dá»«ng";
+                lblCamStatus.Text = "Server: Đã dừng";
                 lblCamStatus.ForeColor = Color.FromArgb(191, 97, 106);
-                lblCamClient.Text = "Client: 0 káº¿t ná»‘i";
+                lblCamClient.Text = "Client: 0 kết nối";
 
                 timerContinuousTrigger.Stop();
                 rbContinuousTrigger.Checked = false;
 
-                AppendCameraLog("SYS", "Camera TCP Server & FTP Server Ä‘Ă£ dá»«ng.", Color.OrangeRed);
+                AppendCameraLog("SYS", "Camera TCP Server & FTP Server đã dừng.", Color.OrangeRed);
             }
             catch (Exception ex)
             {
-                AppendCameraLog("ERR", "Lá»—i stop Camera Server: " + ex.Message, Color.Red);
+                AppendCameraLog("ERR", "Lỗi stop Camera Server: " + ex.Message, Color.Red);
             }
         }
 
@@ -231,7 +231,7 @@ namespace VSC
 
                     UpdateCamClientCount();
                     string ep = client.Client.RemoteEndPoint?.ToString() ?? "Unknown";
-                    AppendCameraLog("CONNECT", $"R-Link káº¿t ná»‘i Ä‘áº¿n Camera tá»« {ep}", Color.FromArgb(163, 190, 140));
+                    AppendCameraLog("CONNECT", $"R-Link kết nối đến Camera từ {ep}", Color.FromArgb(163, 190, 140));
 
                     _ = Task.Run(() => HandleCamClientAsync(connectedClient, token));
                 }
@@ -240,7 +240,7 @@ namespace VSC
                 {
                     if (!token.IsCancellationRequested)
                     {
-                        AppendCameraLog("ERR", "Lá»—i Accept Camera Client: " + ex.Message, Color.Red);
+                        AppendCameraLog("ERR", "Lỗi Accept Camera Client: " + ex.Message, Color.Red);
                     }
                 }
             }
@@ -287,7 +287,7 @@ namespace VSC
                 }
                 client.Dispose();
                 UpdateCamClientCount();
-                AppendCameraLog("DISCONNECT", "R-Link Ä‘Ă£ ngáº¯t káº¿t ná»‘i Camera.", Color.Orange);
+                AppendCameraLog("DISCONNECT", "R-Link đã ngắt kết nối Camera.", Color.Orange);
             }
         }
 
@@ -432,7 +432,6 @@ namespace VSC
 
         private string FormatKeyencePacket(string payload)
         {
-            // Standard Framed Keyence packet: <STX>payload\r\n<ETX> or payload\r\n
             return $"{((char)STX)}{payload}\r\n{((char)ETX)}";
         }
 
@@ -447,7 +446,7 @@ namespace VSC
             {
                 timerContinuousTrigger.Interval = (int)nudInterval.Value;
                 timerContinuousTrigger.Start();
-                AppendCameraLog("SYS", $"Báº¯t Ä‘áº§u Continuous Trigger ({nudInterval.Value} ms).", Color.Yellow);
+                AppendCameraLog("SYS", $"Bắt đầu Continuous Trigger ({nudInterval.Value} ms).", Color.Yellow);
             }
             else
             {
@@ -467,18 +466,18 @@ namespace VSC
             int scenarioIndex = cboScenario.SelectedIndex;
             Task.Run(async () =>
             {
-                BeginInvoke(new Action(() => { prgScenario.Value = 0; prgScenario.Maximum = 100; lblScenarioStatus.Text = "Äang cháº¡y ká»‹ch báº£n..."; }));
+                BeginInvoke(new Action(() => { prgScenario.Value = 0; prgScenario.Maximum = 100; lblScenarioStatus.Text = "Đang chạy kịch bản..."; }));
 
                 int count = 100;
                 for (int i = 1; i <= count; i++)
                 {
-                    if (scenarioIndex == 1 && i % 10 == 0) // 1 NG every 10
+                    if (scenarioIndex == 1 && i % 10 == 0)
                     {
                         chkInjectBadFormat.Checked = true;
                         SendCameraTriggerResult();
                         chkInjectBadFormat.Checked = false;
                     }
-                    else if (scenarioIndex == 2 && i >= 10 && i <= 14) // 5 NGs in a row
+                    else if (scenarioIndex == 2 && i >= 10 && i <= 14)
                     {
                         chkInjectNoRead.Checked = true;
                         SendCameraTriggerResult();
@@ -494,7 +493,7 @@ namespace VSC
                     await Task.Delay(scenarioIndex == 3 ? 20 : 100);
                 }
 
-                BeginInvoke(new Action(() => { lblScenarioStatus.Text = "Ká»‹ch báº£n hoĂ n táº¥t 100%!"; }));
+                BeginInvoke(new Action(() => { lblScenarioStatus.Text = "Kịch bản hoàn tất 100%!"; }));
             });
         }
 
@@ -507,7 +506,7 @@ namespace VSC
             }
             BeginInvoke(new Action(() =>
             {
-                lblCamClient.Text = $"Client R-Link: {count} káº¿t ná»‘i";
+                lblCamClient.Text = $"Client R-Link: {count} kết nối";
             }));
         }
 
@@ -601,12 +600,12 @@ namespace VSC
         {
             if (isError)
             {
-                lblPreviewStatus.Text = $"CAMERA TRáº NG THĂI: NG (Lá»–I Äá»ŒC MĂƒ) - [{payload}]";
+                lblPreviewStatus.Text = $"CAMERA TRẠNG THÁI: NG (LỖI ĐỌC MÃ) - [{payload}]";
                 lblPreviewStatus.BackColor = Color.FromArgb(191, 97, 106);
             }
             else
             {
-                lblPreviewStatus.Text = $"CAMERA TRáº NG THĂI: PASS (OK) - [{payload}]";
+                lblPreviewStatus.Text = $"CAMERA TRẠNG THÁI: PASS (OK) - [{payload}]";
                 lblPreviewStatus.BackColor = Color.FromArgb(46, 139, 87);
             }
         }
@@ -644,7 +643,7 @@ namespace VSC
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     File.WriteAllText(sfd.FileName, rtbCameraLog.Text, Encoding.UTF8);
-                    MessageBox.Show("ÄĂ£ lÆ°u log Camera thĂ nh cĂ´ng!", "ThĂ´ng bĂ¡o", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đã lưu log Camera thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -721,18 +720,18 @@ namespace VSC
 
                 Task.Run(() => PrnListenForClientsAsync(_prnTcpCts.Token));
 
-                btnPrnServerToggle.Text = "Dá»ªNG SERVER MĂY IN";
+                btnPrnServerToggle.Text = "DỪNG SERVER MÁY IN";
                 btnPrnServerToggle.BackColor = Color.FromArgb(191, 97, 106);
                 pnlPrnStatus.BackColor = Color.LimeGreen;
-                lblPrnStatus.Text = $"Server: Äang cháº¡y ({port})";
+                lblPrnStatus.Text = $"Server: Đang chạy ({port})";
                 lblPrnStatus.ForeColor = Color.FromArgb(163, 190, 140);
 
-                AppendPrinterLog("SYS", $"Server MĂ¡y In khá»Ÿi cháº¡y thĂ nh cĂ´ng táº¡i port {port}.", Color.LimeGreen);
+                AppendPrinterLog("SYS", $"Server Máy In khởi chạy thành công tại port {port}.", Color.LimeGreen);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lá»—i khi khá»Ÿi Ä‘á»™ng Server MĂ¡y In: " + ex.Message, "Lá»—i Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                AppendPrinterLog("ERR", "Lá»—i start Printer Server: " + ex.Message, Color.Red);
+                MessageBox.Show("Lỗi khi khởi động Server Máy In: " + ex.Message, "Lỗi Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                AppendPrinterLog("ERR", "Lỗi start Printer Server: " + ex.Message, Color.Red);
             }
         }
 
@@ -753,20 +752,20 @@ namespace VSC
                     _prnConnectedClients.Clear();
                 }
 
-                btnPrnServerToggle.Text = "KHá»I Äá»˜NG SERVER MĂY IN";
+                btnPrnServerToggle.Text = "KHỞI ĐỘNG SERVER MÁY IN";
                 btnPrnServerToggle.BackColor = Color.FromArgb(46, 139, 87);
                 pnlPrnStatus.BackColor = Color.Red;
-                lblPrnStatus.Text = "Server: ÄĂ£ dá»«ng";
+                lblPrnStatus.Text = "Server: Đã dừng";
                 lblPrnStatus.ForeColor = Color.FromArgb(191, 97, 106);
-                lblPrnClient.Text = "Client R-Link: 0 káº¿t ná»‘i";
+                lblPrnClient.Text = "Client R-Link: 0 kết nối";
 
                 timerPrinterPrint.Stop();
 
-                AppendPrinterLog("SYS", "Server MĂ¡y In Ä‘Ă£ dá»«ng.", Color.OrangeRed);
+                AppendPrinterLog("SYS", "Server Máy In đã dừng.", Color.OrangeRed);
             }
             catch (Exception ex)
             {
-                AppendPrinterLog("ERR", "Lá»—i stop Printer Server: " + ex.Message, Color.Red);
+                AppendPrinterLog("ERR", "Lỗi stop Printer Server: " + ex.Message, Color.Red);
             }
         }
 
@@ -786,7 +785,7 @@ namespace VSC
 
                     UpdatePrnClientCount();
                     string ep = client.Client.RemoteEndPoint?.ToString() ?? "Unknown";
-                    AppendPrinterLog("CONNECT", $"R-Link káº¿t ná»‘i Ä‘áº¿n MĂ¡y In tá»« {ep}", Color.FromArgb(163, 190, 140));
+                    AppendPrinterLog("CONNECT", $"R-Link kết nối đến Máy In từ {ep}", Color.FromArgb(163, 190, 140));
 
                     _ = Task.Run(() => HandlePrnClientAsync(connectedClient, token));
                 }
@@ -795,7 +794,7 @@ namespace VSC
                 {
                     if (!token.IsCancellationRequested)
                     {
-                        AppendPrinterLog("ERR", "Lá»—i Accept Printer Client: " + ex.Message, Color.Red);
+                        AppendPrinterLog("ERR", "Lỗi Accept Printer Client: " + ex.Message, Color.Red);
                     }
                 }
             }
@@ -845,7 +844,7 @@ namespace VSC
                 }
                 client.Dispose();
                 UpdatePrnClientCount();
-                AppendPrinterLog("DISCONNECT", "R-Link Ä‘Ă£ ngáº¯t káº¿t ná»‘i MĂ¡y In.", Color.Orange);
+                AppendPrinterLog("DISCONNECT", "R-Link đã ngắt kết nối Máy In.", Color.Orange);
             }
         }
 
@@ -910,7 +909,6 @@ namespace VSC
 
         private void HandlePrnDataCommand(ConnectedClient client, string cmd, string rawMsg, string[] parts)
         {
-            // Auto ACK
             if (_prnAutoAck)
             {
                 SendPrnResponse(client, $"{cmd};RYES");
@@ -979,7 +977,6 @@ namespace VSC
 
         private void HandlePrnMonCommand(ConnectedClient client)
         {
-            // MON format: MON;{status};{speed};{printedCount};0;OK;0;0;0;0;{template}
             string monPacket = $"MON;{_prnState};{_prnSpeedPpm};{_prnTotalPrinted};0;OK;0;0;0;0;{_prnTemplate}";
             SendPrnResponse(client, monPacket);
         }
@@ -1034,13 +1031,11 @@ namespace VSC
 
                 item.Status = "Printed";
 
-                // Format RSFP packet: RSFP;printed/received;DATA;payload
                 string rsfp = $"RSFP;{printed}/{_prnTotalReceived};DATA;{item.Payload}";
                 SendPrnBroadcast(rsfp);
 
                 BeginInvoke(new Action(() =>
                 {
-                    // Update Status in DataGridView
                     foreach (DataGridViewRow row in dgvPrintBuffer.Rows)
                     {
                         if (row.Cells["colId"].Value != null && (int)row.Cells["colId"].Value == item.Id)
@@ -1052,7 +1047,6 @@ namespace VSC
                     }
                 }));
 
-                // Interlock with Camera VS-C
                 if (_prnInterlockCamera && chkPrnInterlockCamera.Checked)
                 {
                     FeedToCameraSimulator(item.Payload);
@@ -1064,7 +1058,6 @@ namespace VSC
         {
             Task.Run(async () =>
             {
-                // Simulate conveyor delay (e.g. 150ms)
                 await Task.Delay(150);
 
                 string[] fields = payload.Split(';');
@@ -1103,9 +1096,9 @@ namespace VSC
             BeginInvoke(new Action(() =>
             {
                 dgvPrintBuffer.Rows.Clear();
-                lblPrnBufferCount.Text = "Chá» trong Buffer: 0";
+                lblPrnBufferCount.Text = "Chờ trong Buffer: 0";
             }));
-            AppendPrinterLog("SYS", "ÄĂ£ xĂ³a sáº¡ch bá»™ Ä‘á»‡m in (CLPB).", Color.Yellow);
+            AppendPrinterLog("SYS", "Đã xóa sạch bộ đệm in (CLPB).", Color.Yellow);
         }
 
         private void ResetPrinterCounters()
@@ -1114,7 +1107,7 @@ namespace VSC
             Interlocked.Exchange(ref _prnTotalPrinted, 0);
             ClearPrintBuffer();
             UpdateUiCounters();
-            AppendPrinterLog("SYS", "ÄĂ£ reset bá»™ Ä‘áº¿m mĂ¡y in.", Color.Yellow);
+            AppendPrinterLog("SYS", "Đã reset bộ đếm máy in.", Color.Yellow);
         }
 
         private void btnSendRsal_Click(object sender, EventArgs e)
@@ -1124,13 +1117,13 @@ namespace VSC
             string rsalPacket = $"RSAL;{code};1";
 
             SendPrnBroadcast(rsalPacket);
-            AppendPrinterLog("ALARM", $"TiĂªm cáº£nh bĂ¡o: {rsalPacket} ({selected})", Color.Salmon);
+            AppendPrinterLog("ALARM", $"Tiêm cảnh báo: {rsalPacket} ({selected})", Color.Salmon);
         }
 
         private void btnSendPlc001_Click(object sender, EventArgs e)
         {
             SendPrnBroadcast("PLC001");
-            AppendPrinterLog("PULSE", "Gá»­i tĂ­n hiá»‡u xung index PLC001 sang R-Link", Color.LightSkyBlue);
+            AppendPrinterLog("PULSE", "Gửi tín hiệu xung index PLC001 sang R-Link", Color.LightSkyBlue);
         }
 
         private void btnPrnSimulateDrop_Click(object sender, EventArgs e)
@@ -1144,7 +1137,7 @@ namespace VSC
                 _prnConnectedClients.Clear();
             }
             UpdatePrnClientCount();
-            AppendPrinterLog("DROP", "MĂ´ phá»ng ngáº¯t káº¿t ná»‘i Ä‘á»™t ngá»™t vá»›i R-Link!", Color.Red);
+            AppendPrinterLog("DROP", "Mô phỏng ngắt kết nối đột ngột với R-Link!", Color.Red);
         }
 
         private void btnPrnTestSyncTime_Click(object sender, EventArgs e)
@@ -1201,7 +1194,7 @@ namespace VSC
             }
             BeginInvoke(new Action(() =>
             {
-                lblPrnClient.Text = $"Client R-Link: {count} káº¿t ná»‘i";
+                lblPrnClient.Text = $"Client R-Link: {count} kết nối";
             }));
         }
 
@@ -1238,7 +1231,7 @@ namespace VSC
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     File.WriteAllText(sfd.FileName, rtbPrinterLog.Text, Encoding.UTF8);
-                    MessageBox.Show("ÄĂ£ lÆ°u log MĂ¡y In thĂ nh cĂ´ng!", "ThĂ´ng bĂ¡o", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đã lưu log Máy In thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -1255,9 +1248,9 @@ namespace VSC
             chkPrnInterlockCamera.Checked = true;
             SetPrinterState("Printing");
 
-            lblLineSimStatus.Text = "â¡ DĂ‚Y CHUYá»€N ÄANG HOáº T Äá»˜NG: In + So khá»›p Realtime!";
+            lblLineSimStatus.Text = "⚡ DÂY CHUYỀN ĐANG HOẠT ĐỘNG: In + So khớp Realtime!";
             lblLineSimStatus.ForeColor = Color.LimeGreen;
-            AppendInterlockLog("ÄĂ£ kĂ­ch hoáº¡t toĂ n bá»™ dĂ¢y chuyá»n mĂ´ phá»ng liĂªn há»£p.", Color.LimeGreen);
+            AppendInterlockLog("Đã kích hoạt toàn bộ dây chuyền mô phỏng liên hợp.", Color.LimeGreen);
         }
 
         private void StopAllServers()
@@ -1266,9 +1259,9 @@ namespace VSC
             StopPrnServer();
             _isFullLineRunning = false;
 
-            lblLineSimStatus.Text = "Tráº¡ng thĂ¡i liĂªn há»£p: ÄĂ£ dá»«ng táº¥t cáº£ server.";
+            lblLineSimStatus.Text = "Trạng thái liên hợp: Đã dừng tất cả server.";
             lblLineSimStatus.ForeColor = Color.Salmon;
-            AppendInterlockLog("ÄĂ£ dá»«ng táº¥t cáº£ cĂ¡c server mĂ´ phá»ng.", Color.Salmon);
+            AppendInterlockLog("Đã dừng tất cả các server mô phỏng.", Color.Salmon);
         }
 
         private void AppendInterlockLog(string msg, Color color)
@@ -1293,27 +1286,24 @@ namespace VSC
 
         private void UpdateUiCounters()
         {
-            // Camera Counters
-            lblCamSentCount.Text = $"Gá»­i: {_camTotalSent} gĂ³i";
+            lblCamSentCount.Text = $"Gửi: {_camTotalSent} gói";
             lblCamTriggerCount.Text = $"Trigger: {_camTotalTriggers}";
-            lblCamErrorCount.Text = $"Lá»—i NG: {_camTotalErrors}";
+            lblCamErrorCount.Text = $"Lỗi NG: {_camTotalErrors}";
 
-            // Printer Counters
             int pending = _prnQueue.Count;
-            lblPrnTotalRecv.Text = $"Tá»•ng nháº­n: {_prnTotalReceived}";
-            lblPrnTotalPrinted.Text = $"ÄĂ£ in: {_prnTotalPrinted}";
-            lblPrnBufferCount.Text = $"Chá» trong Buffer: {pending}";
+            lblPrnTotalRecv.Text = $"Tổng nhận: {_prnTotalReceived}";
+            lblPrnTotalPrinted.Text = $"Đã in: {_prnTotalPrinted}";
+            lblPrnBufferCount.Text = $"Chờ trong Buffer: {pending}";
 
             int pct = _prnTotalReceived > 0 ? (int)((_prnTotalPrinted / (double)_prnTotalReceived) * 100) : 0;
             prgPrnBuffer.Value = Math.Min(100, Math.Max(0, pct));
 
-            // Interlock Counters
-            lblLinePrintedCount.Text = $"MĂ¡y In ÄĂ£ Xáº£: {_linePrintedCount} sáº£n pháº©m";
-            lblLineVerifiedCount.Text = $"Camera ÄĂ£ Äá»c: {_lineVerifiedCount} sáº£n pháº©m";
-            lblLineNgCount.Text = $"Lá»—i NG In/Äá»c: {_lineNgCount}";
+            lblLinePrintedCount.Text = $"Máy In Đã Xả: {_linePrintedCount} sản phẩm";
+            lblLineVerifiedCount.Text = $"Camera Đã Đọc: {_lineVerifiedCount} sản phẩm";
+            lblLineNgCount.Text = $"Lỗi NG In/Đọc: {_lineNgCount}";
 
             double matchRate = _lineVerifiedCount > 0 ? ((_lineVerifiedCount - _lineNgCount) / (double)_lineVerifiedCount) * 100.0 : 100.0;
-            lblLineMatchRate.Text = $"Tá»· Lá»‡ Khá»›p: {matchRate:F1}%";
+            lblLineMatchRate.Text = $"Tỷ Lệ Khớp: {matchRate:F1}%";
         }
         #endregion
     }
@@ -1384,13 +1374,13 @@ namespace VSC
                 _cts = new CancellationTokenSource();
                 _listener = new TcpListener(_ip, _port);
                 _listener.Start();
-                _logger?.Invoke("FTP", $"FTP Server Ä‘ang láº¯ng nghe táº¡i port {_port}, Root: {_rootDir}", Color.LimeGreen);
+                _logger?.Invoke("FTP", $"FTP Server đang lắng nghe tại port {_port}, Root: {_rootDir}", Color.LimeGreen);
 
                 Task.Run(() => ListenAsync(_cts.Token));
             }
             catch (Exception ex)
             {
-                _logger?.Invoke("FTP_ERR", "Lá»—i start FTP Server: " + ex.Message, Color.Red);
+                _logger?.Invoke("FTP_ERR", "Lỗi start FTP Server: " + ex.Message, Color.Red);
             }
         }
 

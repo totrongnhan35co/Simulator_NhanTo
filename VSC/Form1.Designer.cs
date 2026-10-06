@@ -393,7 +393,7 @@ namespace VSC
             this.tabCamera.Padding = new System.Windows.Forms.Padding(10);
             this.tabCamera.Size = new System.Drawing.Size(1376, 817);
             this.tabCamera.TabIndex = 0;
-            this.tabCamera.Text = "đŸ“· Camera Keyence VS-C (Port 8500)";
+            this.tabCamera.Text = "📷 Camera Keyence VS-C (Port 8500)";
 
             // 
             // pnlCamLeft
@@ -433,7 +433,7 @@ namespace VSC
             this.grpCameraServer.Size = new System.Drawing.Size(450, 115);
             this.grpCameraServer.TabIndex = 0;
             this.grpCameraServer.TabStop = false;
-            this.grpCameraServer.Text = "Cáº¤U HĂŒNH TCP/FTP SERVER (CAMERA KEYENCE)";
+            this.grpCameraServer.Text = "CẤU HÌNH TCP/FTP SERVER (CAMERA KEYENCE)";
 
             this.lblCamIp.AutoSize = true;
             this.lblCamIp.Font = new System.Drawing.Font("Segoe UI", 8.5F);
@@ -441,7 +441,8 @@ namespace VSC
             this.lblCamIp.Location = new System.Drawing.Point(12, 25);
             this.lblCamIp.Name = "lblCamIp";
             this.lblCamIp.Size = new System.Drawing.Size(81, 15);
-            this.lblCamIp.Text = "IP Láº¯ng Nghe:";
+            this.lblCamIp.TabIndex = 0;
+            this.lblCamIp.Text = "IP Lắng Nghe:";
 
             this.txtCamServerIp.BackColor = System.Drawing.Color.FromArgb(40, 40, 56);
             this.txtCamServerIp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -500,7 +501,7 @@ namespace VSC
             this.btnCamServerToggle.Name = "btnCamServerToggle";
             this.btnCamServerToggle.Size = new System.Drawing.Size(230, 30);
             this.btnCamServerToggle.TabIndex = 6;
-            this.btnCamServerToggle.Text = "KHá»I Äá»˜NG CAMERA SERVER";
+            this.btnCamServerToggle.Text = "KHỞI ĐỘNG CAMERA SERVER";
             this.btnCamServerToggle.UseVisualStyleBackColor = false;
             this.btnCamServerToggle.Click += new System.EventHandler(this.btnCamServerToggle_Click);
 
@@ -517,7 +518,7 @@ namespace VSC
             this.lblCamStatus.Name = "lblCamStatus";
             this.lblCamStatus.Size = new System.Drawing.Size(107, 15);
             this.lblCamStatus.TabIndex = 8;
-            this.lblCamStatus.Text = "Server: ChÆ°a cháº¡y";
+            this.lblCamStatus.Text = "Server: Chưa chạy";
 
             this.lblCamClient.AutoSize = true;
             this.lblCamClient.Font = new System.Drawing.Font("Segoe UI", 8F);
@@ -526,7 +527,7 @@ namespace VSC
             this.lblCamClient.Name = "lblCamClient";
             this.lblCamClient.Size = new System.Drawing.Size(89, 13);
             this.lblCamClient.TabIndex = 9;
-            this.lblCamClient.Text = "Client: 0 káº¿t ná»‘i";
+            this.lblCamClient.Text = "Client: 0 kết nối";
 
             // 
             // grpTrigger
@@ -547,7 +548,7 @@ namespace VSC
             this.grpTrigger.Size = new System.Drawing.Size(450, 110);
             this.grpTrigger.TabIndex = 1;
             this.grpTrigger.TabStop = false;
-            this.grpTrigger.Text = "CHáº¾ Äá»˜ TRIGGER & NHá»P Äá»˜ CHá»¤P";
+            this.grpTrigger.Text = "CHẾ ĐỘ TRIGGER & NHỊP ĐỘ CHỤP";
 
             this.rbManualTrigger.AutoSize = true;
             this.rbManualTrigger.Checked = true;
@@ -558,7 +559,7 @@ namespace VSC
             this.rbManualTrigger.Size = new System.Drawing.Size(133, 19);
             this.rbManualTrigger.TabIndex = 0;
             this.rbManualTrigger.TabStop = true;
-            this.rbManualTrigger.Text = "Thá»§ cĂ´ng (NĂºt báº¥m)";
+            this.rbManualTrigger.Text = "Thủ công (Nút bấm)";
             this.rbManualTrigger.UseVisualStyleBackColor = true;
 
             this.rbContinuousTrigger.AutoSize = true;
@@ -568,7 +569,7 @@ namespace VSC
             this.rbContinuousTrigger.Name = "rbContinuousTrigger";
             this.rbContinuousTrigger.Size = new System.Drawing.Size(176, 19);
             this.rbContinuousTrigger.TabIndex = 1;
-            this.rbContinuousTrigger.Text = "Tá»± Ä‘á»™ng (Continuous Loop)";
+            this.rbContinuousTrigger.Text = "Tự động (Continuous Loop)";
             this.rbContinuousTrigger.UseVisualStyleBackColor = true;
             this.rbContinuousTrigger.CheckedChanged += new System.EventHandler(this.rbContinuousTrigger_CheckedChanged);
 
@@ -579,7 +580,7 @@ namespace VSC
             this.rbOnDemandTrigger.Name = "rbOnDemandTrigger";
             this.rbOnDemandTrigger.Size = new System.Drawing.Size(168, 19);
             this.rbOnDemandTrigger.TabIndex = 2;
-            this.rbOnDemandTrigger.Text = "Theo lá»‡nh (T1/T2/TRG/SW)";
+            this.rbOnDemandTrigger.Text = "Theo lệnh (T1/T2/TRG/SW)";
             this.rbOnDemandTrigger.UseVisualStyleBackColor = true;
 
             this.btnSendSingleTrigger.BackColor = System.Drawing.Color.FromArgb(94, 129, 172);
@@ -590,7 +591,7 @@ namespace VSC
             this.btnSendSingleTrigger.Name = "btnSendSingleTrigger";
             this.btnSendSingleTrigger.Size = new System.Drawing.Size(205, 28);
             this.btnSendSingleTrigger.TabIndex = 3;
-            this.btnSendSingleTrigger.Text = "đŸ“¸ Báº®N 1 TRIGGER (Gá»¬I Dá»® LIá»†U)";
+            this.btnSendSingleTrigger.Text = "📸 BẮN 1 TRIGGER (GỬI DỮ LIỆU)";
             this.btnSendSingleTrigger.UseVisualStyleBackColor = false;
             this.btnSendSingleTrigger.Click += new System.EventHandler(this.btnSendSingleTrigger_Click);
 
@@ -601,7 +602,7 @@ namespace VSC
             this.lblInterval.Name = "lblInterval";
             this.lblInterval.Size = new System.Drawing.Size(73, 15);
             this.lblInterval.TabIndex = 4;
-            this.lblInterval.Text = "Tá»‘c Ä‘á»™ (ms):";
+            this.lblInterval.Text = "Tốc độ (ms):";
 
             this.trackInterval.Location = new System.Drawing.Point(90, 74);
             this.trackInterval.Maximum = 2000;
@@ -650,7 +651,7 @@ namespace VSC
             this.grpProductData.Size = new System.Drawing.Size(450, 205);
             this.grpProductData.TabIndex = 2;
             this.grpProductData.TabStop = false;
-            this.grpProductData.Text = "Dá»® LIá»†U MĂƒ Váº CH / QR TH TRUE MILK";
+            this.grpProductData.Text = "DỮ LIỆU MÃ VẠCH / QR TH TRUE MILK";
 
             this.lblProductType.AutoSize = true;
             this.lblProductType.Font = new System.Drawing.Font("Segoe UI", 8.5F);
@@ -659,7 +660,7 @@ namespace VSC
             this.lblProductType.Name = "lblProductType";
             this.lblProductType.Size = new System.Drawing.Size(89, 15);
             this.lblProductType.TabIndex = 0;
-            this.lblProductType.Text = "Loáº¡i Sáº£n Pháº©m:";
+            this.lblProductType.Text = "Loại Sản Phẩm:";
 
             this.cboProductType.BackColor = System.Drawing.Color.FromArgb(40, 40, 56);
             this.cboProductType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -667,12 +668,12 @@ namespace VSC
             this.cboProductType.ForeColor = System.Drawing.Color.White;
             this.cboProductType.FormattingEnabled = true;
             this.cboProductType.Items.AddRange(new object[] {
-            "Sá»¯a tÆ°Æ¡i tiá»‡t trĂ¹ng 180ml (8935001234567)",
-            "Sá»¯a tÆ°Æ¡i tiá»‡t trĂ¹ng 110ml (8935001234581)",
-            "Sá»¯a chua Äƒn tá»± nhiĂªn 100g (8935001234604)",
-            "Sá»¯a chua uá»‘ng Topkid 110ml (8935001234628)",
-            "Sá»¯a bá»‹ch tiá»‡t trĂ¹ng 220ml (8935001234659)",
-            "NÆ°á»›c tinh khiáº¿t TH True WATER (8935001234888)"});
+            "Sữa tươi tiệt trùng 180ml (8935001234567)",
+            "Sữa tươi tiệt trùng 110ml (8935001234581)",
+            "Sữa chua ăn tự nhiên 100g (8935001234604)",
+            "Sữa chua uống Topkid 110ml (8935001234628)",
+            "Sữa bịch tiệt trùng 220ml (8935001234659)",
+            "Nước tinh khiết TH True WATER (8935001234888)"});
             this.cboProductType.Location = new System.Drawing.Point(115, 21);
             this.cboProductType.Name = "cboProductType";
             this.cboProductType.Size = new System.Drawing.Size(315, 23);
@@ -686,7 +687,7 @@ namespace VSC
             this.lblMfgDate.Name = "lblMfgDate";
             this.lblMfgDate.Size = new System.Drawing.Size(91, 15);
             this.lblMfgDate.TabIndex = 2;
-            this.lblMfgDate.Text = "NgĂ y SX (MFG):";
+            this.lblMfgDate.Text = "Ngày SX (MFG):";
 
             this.dtpMfgDate.CustomFormat = "dd/MM/yyyy";
             this.dtpMfgDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -702,7 +703,7 @@ namespace VSC
             this.lblExpDate.Name = "lblExpDate";
             this.lblExpDate.Size = new System.Drawing.Size(83, 15);
             this.lblExpDate.TabIndex = 4;
-            this.lblExpDate.Text = "Háº¡n SD (EXP):";
+            this.lblExpDate.Text = "Hạn SD (EXP):";
 
             this.dtpExpDate.CustomFormat = "dd/MM/yyyy";
             this.dtpExpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -718,7 +719,7 @@ namespace VSC
             this.lblShiftTime.Name = "lblShiftTime";
             this.lblShiftTime.Size = new System.Drawing.Size(73, 15);
             this.lblShiftTime.TabIndex = 6;
-            this.lblShiftTime.Text = "Giá» / Ca SX:";
+            this.lblShiftTime.Text = "Giờ / Ca SX:";
 
             this.txtShiftTime.BackColor = System.Drawing.Color.FromArgb(40, 40, 56);
             this.txtShiftTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -754,7 +755,7 @@ namespace VSC
             this.lblBarcodeData.Name = "lblBarcodeData";
             this.lblBarcodeData.Size = new System.Drawing.Size(86, 15);
             this.lblBarcodeData.TabIndex = 10;
-            this.lblBarcodeData.Text = "Chuá»—i mĂ£ gá»­i:";
+            this.lblBarcodeData.Text = "Chuỗi mã gửi:";
 
             this.txtBarcodeData.BackColor = System.Drawing.Color.FromArgb(40, 40, 56);
             this.txtBarcodeData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -773,7 +774,7 @@ namespace VSC
             this.btnGenerateBarcode.Name = "btnGenerateBarcode";
             this.btnGenerateBarcode.Size = new System.Drawing.Size(315, 28);
             this.btnGenerateBarcode.TabIndex = 12;
-            this.btnGenerateBarcode.Text = "â¡ TĂI Táº O MĂƒ THEO THá»œI GIAN THá»°C";
+            this.btnGenerateBarcode.Text = "⚡ TÁI TẠO MÃ THEO THỜI GIAN THỰC";
             this.btnGenerateBarcode.UseVisualStyleBackColor = false;
 
             // 
@@ -796,7 +797,7 @@ namespace VSC
             this.grpErrorInjection.Size = new System.Drawing.Size(450, 160);
             this.grpErrorInjection.TabIndex = 3;
             this.grpErrorInjection.TabStop = false;
-            this.grpErrorInjection.Text = "TIĂM Lá»–I KIá»‚M THá»¬ (ERROR INJECTION - NG TEST)";
+            this.grpErrorInjection.Text = "TIÊM LỖI KIỂM THỬ (ERROR INJECTION - NG TEST)";
 
             this.chkInjectBadFormat.AutoSize = true;
             this.chkInjectBadFormat.Font = new System.Drawing.Font("Segoe UI", 8.5F);
@@ -805,7 +806,7 @@ namespace VSC
             this.chkInjectBadFormat.Name = "chkInjectBadFormat";
             this.chkInjectBadFormat.Size = new System.Drawing.Size(215, 19);
             this.chkInjectBadFormat.TabIndex = 0;
-            this.chkInjectBadFormat.Text = "Sai Ä‘á»‹nh dáº¡ng mĂ£ (Bad Checksum)";
+            this.chkInjectBadFormat.Text = "Sai định dạng mã (Bad Checksum)";
             this.chkInjectBadFormat.UseVisualStyleBackColor = true;
 
             this.chkInjectWrongDate.AutoSize = true;
@@ -815,7 +816,7 @@ namespace VSC
             this.chkInjectWrongDate.Name = "chkInjectWrongDate";
             this.chkInjectWrongDate.Size = new System.Drawing.Size(201, 19);
             this.chkInjectWrongDate.TabIndex = 1;
-            this.chkInjectWrongDate.Text = "Sai ngĂ y sáº£n xuáº¥t (Wrong MFG)";
+            this.chkInjectWrongDate.Text = "Sai ngày sản xuất (Wrong MFG)";
             this.chkInjectWrongDate.UseVisualStyleBackColor = true;
 
             this.chkInjectExpiredDate.AutoSize = true;
@@ -825,7 +826,7 @@ namespace VSC
             this.chkInjectExpiredDate.Name = "chkInjectExpiredDate";
             this.chkInjectExpiredDate.Size = new System.Drawing.Size(167, 19);
             this.chkInjectExpiredDate.TabIndex = 2;
-            this.chkInjectExpiredDate.Text = "QuĂ¡ háº¡n sá»­ dá»¥ng (Expired)";
+            this.chkInjectExpiredDate.Text = "Quá hạn sử dụng (Expired)";
             this.chkInjectExpiredDate.UseVisualStyleBackColor = true;
 
             this.chkInjectNoRead.AutoSize = true;
@@ -835,7 +836,7 @@ namespace VSC
             this.chkInjectNoRead.Name = "chkInjectNoRead";
             this.chkInjectNoRead.Size = new System.Drawing.Size(227, 19);
             this.chkInjectNoRead.TabIndex = 3;
-            this.chkInjectNoRead.Text = "KhĂ´ng Ä‘á»c Ä‘Æ°á»£c (ERROR / NOREAD)";
+            this.chkInjectNoRead.Text = "Không đọc được (ERROR / NOREAD)";
             this.chkInjectNoRead.UseVisualStyleBackColor = true;
 
             this.chkInjectPartialRead.AutoSize = true;
@@ -845,7 +846,7 @@ namespace VSC
             this.chkInjectPartialRead.Name = "chkInjectPartialRead";
             this.chkInjectPartialRead.Size = new System.Drawing.Size(193, 19);
             this.chkInjectPartialRead.TabIndex = 4;
-            this.chkInjectPartialRead.Text = "MĂ£ bá»‹ máº¥t kĂ½ tá»± (Partial Read)";
+            this.chkInjectPartialRead.Text = "Mã bị mất ký tự (Partial Read)";
             this.chkInjectPartialRead.UseVisualStyleBackColor = true;
 
             this.chkInjectCustomString.AutoSize = true;
@@ -855,7 +856,7 @@ namespace VSC
             this.chkInjectCustomString.Name = "chkInjectCustomString";
             this.chkInjectCustomString.Size = new System.Drawing.Size(117, 19);
             this.chkInjectCustomString.TabIndex = 5;
-            this.chkInjectCustomString.Text = "Chuá»—i tĂ¹y chá»‰nh:";
+            this.chkInjectCustomString.Text = "Chuỗi tùy chỉnh:";
             this.chkInjectCustomString.UseVisualStyleBackColor = true;
 
             this.txtCustomErrorString.BackColor = System.Drawing.Color.FromArgb(40, 40, 56);
@@ -876,7 +877,7 @@ namespace VSC
             this.btnInjectOnce.Name = "btnInjectOnce";
             this.btnInjectOnce.Size = new System.Drawing.Size(418, 28);
             this.btnInjectOnce.TabIndex = 7;
-            this.btnInjectOnce.Text = "đŸ¨ TIĂM 1 Lá»–I NGAY BĂ‚Y GIá»œ";
+            this.btnInjectOnce.Text = "🚨 TIÊM 1 LỖI NGAY BÂY GIỜ";
             this.btnInjectOnce.UseVisualStyleBackColor = false;
             this.btnInjectOnce.Click += new System.EventHandler(this.btnInjectOnce_Click);
 
@@ -896,7 +897,7 @@ namespace VSC
             this.grpScenarios.Size = new System.Drawing.Size(450, 110);
             this.grpScenarios.TabIndex = 4;
             this.grpScenarios.TabStop = false;
-            this.grpScenarios.Text = "Ká»CH Báº¢N CHáº Y Tá»° Äá»˜NG (TEST SCENARIOS)";
+            this.grpScenarios.Text = "KỊCH BẢN CHẠY TỰ ĐỘNG (TEST SCENARIOS)";
 
             this.cboScenario.BackColor = System.Drawing.Color.FromArgb(40, 40, 56);
             this.cboScenario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -904,10 +905,10 @@ namespace VSC
             this.cboScenario.ForeColor = System.Drawing.Color.White;
             this.cboScenario.FormattingEnabled = true;
             this.cboScenario.Items.AddRange(new object[] {
-            "1. Cháº¡y 100% PASS liĂªn tá»¥c (500 sáº£n pháº©m)",
-            "2. 10 PASS thĂ¬ 1 NG xen káº½ (Intermittent NG)",
-            "3. Bá»‹ 5 lá»—i NG liĂªn tiáº¿p (Test CĂ²i/ÄĂ¨n PLC AutoStop)",
-            "4. Stress Test tá»‘c Ä‘á»™ cao (20ms/mĂ£, 2000 mĂ£)"});
+            "1. Chạy 100% PASS liên tục (500 sản phẩm)",
+            "2. 10 PASS thì 1 NG xen kẽ (Intermittent NG)",
+            "3. Bị 5 lỗi NG liên tiếp (Test Còi/Đèn PLC AutoStop)",
+            "4. Stress Test tốc độ cao (20ms/mã, 2000 mã)"});
             this.cboScenario.Location = new System.Drawing.Point(12, 24);
             this.cboScenario.Name = "cboScenario";
             this.cboScenario.Size = new System.Drawing.Size(280, 23);
@@ -921,7 +922,7 @@ namespace VSC
             this.btnRunScenario.Name = "btnRunScenario";
             this.btnRunScenario.Size = new System.Drawing.Size(130, 27);
             this.btnRunScenario.TabIndex = 1;
-            this.btnRunScenario.Text = "CHáº Y Ká»CH Báº¢N";
+            this.btnRunScenario.Text = "CHẠY KỊCH BẢN";
             this.btnRunScenario.UseVisualStyleBackColor = false;
             this.btnRunScenario.Click += new System.EventHandler(this.btnRunScenario_Click);
 
@@ -937,7 +938,7 @@ namespace VSC
             this.lblScenarioStatus.Name = "lblScenarioStatus";
             this.lblScenarioStatus.Size = new System.Drawing.Size(183, 13);
             this.lblScenarioStatus.TabIndex = 3;
-            this.lblScenarioStatus.Text = "Sáºµn sĂ ng cháº¡y ká»‹ch báº£n kiá»ƒm thá»­.";
+            this.lblScenarioStatus.Text = "Sẵn sàng chạy kịch bản kiểm thử.";
 
             // 
             // pnlCamRight
@@ -976,7 +977,7 @@ namespace VSC
             this.grpPreview.Size = new System.Drawing.Size(420, 212);
             this.grpPreview.TabIndex = 0;
             this.grpPreview.TabStop = false;
-            this.grpPreview.Text = "MĂ” PHá»NG CAMERA CHá»¤P THá»°C Táº¾ (LIVE OCR / BARCODE)";
+            this.grpPreview.Text = "MÔ PHỎNG CAMERA CHỤP THỰC TẾ (LIVE OCR / BARCODE)";
 
             this.picPreview.BackColor = System.Drawing.Color.FromArgb(20, 20, 30);
             this.picPreview.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -995,7 +996,7 @@ namespace VSC
             this.lblPreviewStatus.Name = "lblPreviewStatus";
             this.lblPreviewStatus.Size = new System.Drawing.Size(414, 24);
             this.lblPreviewStatus.TabIndex = 1;
-            this.lblPreviewStatus.Text = "CAMERA TRáº NG THĂI: PASS (OK)";
+            this.lblPreviewStatus.Text = "CAMERA TRẠNG THÁI: PASS (OK)";
             this.lblPreviewStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
             // 
@@ -1033,7 +1034,7 @@ namespace VSC
             this.btnBrowseFtp.Name = "btnBrowseFtp";
             this.btnBrowseFtp.Size = new System.Drawing.Size(95, 24);
             this.btnBrowseFtp.TabIndex = 1;
-            this.btnBrowseFtp.Text = "Má»Ÿ ThÆ° Má»¥c";
+            this.btnBrowseFtp.Text = "Mở Thư Mục";
             this.btnBrowseFtp.UseVisualStyleBackColor = false;
 
             this.lstPrograms.BackColor = System.Drawing.Color.FromArgb(40, 40, 56);
@@ -1055,7 +1056,7 @@ namespace VSC
             this.btnRefreshPrograms.Name = "btnRefreshPrograms";
             this.btnRefreshPrograms.Size = new System.Drawing.Size(95, 26);
             this.btnRefreshPrograms.TabIndex = 3;
-            this.btnRefreshPrograms.Text = "LĂ m Má»›i";
+            this.btnRefreshPrograms.Text = "Làm Mới";
             this.btnRefreshPrograms.UseVisualStyleBackColor = false;
 
             // 
@@ -1071,7 +1072,7 @@ namespace VSC
             this.grpCameraLog.Size = new System.Drawing.Size(891, 577);
             this.grpCameraLog.TabIndex = 1;
             this.grpCameraLog.TabStop = false;
-            this.grpCameraLog.Text = "NHáº¬T KĂ TRAFFIC CAMERA KEYENCE (RAW DATA MONITOR)";
+            this.grpCameraLog.Text = "NHẬT KÝ TRAFFIC CAMERA KEYENCE (RAW DATA MONITOR)";
 
             this.pnlCamLogTools.Controls.Add(this.lblCamSentCount);
             this.pnlCamLogTools.Controls.Add(this.lblCamTriggerCount);
@@ -1093,7 +1094,7 @@ namespace VSC
             this.lblCamSentCount.Name = "lblCamSentCount";
             this.lblCamSentCount.Size = new System.Drawing.Size(61, 15);
             this.lblCamSentCount.TabIndex = 0;
-            this.lblCamSentCount.Text = "Gá»­i: 0 gĂ³i";
+            this.lblCamSentCount.Text = "Gửi: 0 gói";
 
             this.lblCamTriggerCount.AutoSize = true;
             this.lblCamTriggerCount.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
@@ -1111,7 +1112,7 @@ namespace VSC
             this.lblCamErrorCount.Name = "lblCamErrorCount";
             this.lblCamErrorCount.Size = new System.Drawing.Size(59, 15);
             this.lblCamErrorCount.TabIndex = 2;
-            this.lblCamErrorCount.Text = "Lá»—i NG: 0";
+            this.lblCamErrorCount.Text = "Lỗi NG: 0";
 
             this.chkCamAutoScroll.AutoSize = true;
             this.chkCamAutoScroll.Checked = true;
@@ -1122,7 +1123,7 @@ namespace VSC
             this.chkCamAutoScroll.Name = "chkCamAutoScroll";
             this.chkCamAutoScroll.Size = new System.Drawing.Size(73, 19);
             this.chkCamAutoScroll.TabIndex = 3;
-            this.chkCamAutoScroll.Text = "Tá»± cuá»™n";
+            this.chkCamAutoScroll.Text = "Tự cuộn";
             this.chkCamAutoScroll.UseVisualStyleBackColor = true;
 
             this.btnCamClearLog.BackColor = System.Drawing.Color.FromArgb(67, 76, 94);
@@ -1133,7 +1134,7 @@ namespace VSC
             this.btnCamClearLog.Name = "btnCamClearLog";
             this.btnCamClearLog.Size = new System.Drawing.Size(90, 24);
             this.btnCamClearLog.TabIndex = 4;
-            this.btnCamClearLog.Text = "XĂ³a Nháº­t KĂ½";
+            this.btnCamClearLog.Text = "Xóa Nhật Ký";
             this.btnCamClearLog.UseVisualStyleBackColor = false;
 
             this.btnCamSaveLog.BackColor = System.Drawing.Color.FromArgb(67, 76, 94);
@@ -1144,7 +1145,7 @@ namespace VSC
             this.btnCamSaveLog.Name = "btnCamSaveLog";
             this.btnCamSaveLog.Size = new System.Drawing.Size(90, 24);
             this.btnCamSaveLog.TabIndex = 5;
-            this.btnCamSaveLog.Text = "LÆ°u File Log";
+            this.btnCamSaveLog.Text = "Lưu File Log";
             this.btnCamSaveLog.UseVisualStyleBackColor = false;
 
             this.rtbCameraLog.BackColor = System.Drawing.Color.FromArgb(18, 18, 26);
@@ -1171,7 +1172,7 @@ namespace VSC
             this.tabPrinter.Padding = new System.Windows.Forms.Padding(10);
             this.tabPrinter.Size = new System.Drawing.Size(1376, 817);
             this.tabPrinter.TabIndex = 1;
-            this.tabPrinter.Text = "đŸ–¨ï¸ MĂ¡y In POD / TIJ (Port 1997 / 2030)";
+            this.tabPrinter.Text = "🖨️ Máy In POD / TIJ (Port 1997 / 2030)";
 
             // 
             // pnlPrnLeft
@@ -1207,7 +1208,7 @@ namespace VSC
             this.grpPrinterServer.Size = new System.Drawing.Size(420, 115);
             this.grpPrinterServer.TabIndex = 0;
             this.grpPrinterServer.TabStop = false;
-            this.grpPrinterServer.Text = "Cáº¤U HĂŒNH TCP SERVER MĂY IN (POD / TIJ)";
+            this.grpPrinterServer.Text = "CẤU HÌNH TCP SERVER MÁY IN (POD / TIJ)";
 
             this.lblPrnIp.AutoSize = true;
             this.lblPrnIp.Font = new System.Drawing.Font("Segoe UI", 8.5F);
@@ -1216,7 +1217,7 @@ namespace VSC
             this.lblPrnIp.Name = "lblPrnIp";
             this.lblPrnIp.Size = new System.Drawing.Size(81, 15);
             this.lblPrnIp.TabIndex = 0;
-            this.lblPrnIp.Text = "IP Láº¯ng Nghe:";
+            this.lblPrnIp.Text = "IP Lắng Nghe:";
 
             this.txtPrnServerIp.BackColor = System.Drawing.Color.FromArgb(40, 40, 56);
             this.txtPrnServerIp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1255,7 +1256,7 @@ namespace VSC
             this.btnPrnServerToggle.Name = "btnPrnServerToggle";
             this.btnPrnServerToggle.Size = new System.Drawing.Size(220, 30);
             this.btnPrnServerToggle.TabIndex = 4;
-            this.btnPrnServerToggle.Text = "KHá»I Äá»˜NG SERVER MĂY IN";
+            this.btnPrnServerToggle.Text = "KHỞI ĐỘNG SERVER MÁY IN";
             this.btnPrnServerToggle.UseVisualStyleBackColor = false;
             this.btnPrnServerToggle.Click += new System.EventHandler(this.btnPrnServerToggle_Click);
 
@@ -1272,7 +1273,7 @@ namespace VSC
             this.lblPrnStatus.Name = "lblPrnStatus";
             this.lblPrnStatus.Size = new System.Drawing.Size(107, 15);
             this.lblPrnStatus.TabIndex = 6;
-            this.lblPrnStatus.Text = "Server: ChÆ°a cháº¡y";
+            this.lblPrnStatus.Text = "Server: Chưa chạy";
 
             this.lblPrnClient.AutoSize = true;
             this.lblPrnClient.Font = new System.Drawing.Font("Segoe UI", 8F);
@@ -1281,7 +1282,7 @@ namespace VSC
             this.lblPrnClient.Name = "lblPrnClient";
             this.lblPrnClient.Size = new System.Drawing.Size(126, 13);
             this.lblPrnClient.TabIndex = 7;
-            this.lblPrnClient.Text = "Client R-Link: 0 káº¿t ná»‘i";
+            this.lblPrnClient.Text = "Client R-Link: 0 kết nối";
 
             // 
             // grpPrinterControl
@@ -1305,7 +1306,7 @@ namespace VSC
             this.grpPrinterControl.Size = new System.Drawing.Size(420, 230);
             this.grpPrinterControl.TabIndex = 1;
             this.grpPrinterControl.TabStop = false;
-            this.grpPrinterControl.Text = "ÄIá»€U KHIá»‚N & TRáº NG THĂI MĂY IN (MON/STAR/STOP)";
+            this.grpPrinterControl.Text = "ĐIỀU KHIỂN & TRẠNG THÁI MÁY IN (MON/STAR/STOP)";
 
             this.lblPrnState.AutoSize = true;
             this.lblPrnState.Font = new System.Drawing.Font("Segoe UI", 8.5F);
@@ -1314,7 +1315,7 @@ namespace VSC
             this.lblPrnState.Name = "lblPrnState";
             this.lblPrnState.Size = new System.Drawing.Size(107, 15);
             this.lblPrnState.TabIndex = 0;
-            this.lblPrnState.Text = "Tráº¡ng thĂ¡i mĂ¡y in:";
+            this.lblPrnState.Text = "Trạng thái máy in:";
 
             this.cboPrnState.BackColor = System.Drawing.Color.FromArgb(40, 40, 56);
             this.cboPrnState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1341,7 +1342,7 @@ namespace VSC
             this.lblPrnSpeed.Name = "lblPrnSpeed";
             this.lblPrnSpeed.Size = new System.Drawing.Size(95, 15);
             this.lblPrnSpeed.TabIndex = 2;
-            this.lblPrnSpeed.Text = "Tá»‘c Ä‘á»™ in (PPM):";
+            this.lblPrnSpeed.Text = "Tốc độ in (PPM):";
 
             this.trackPrnSpeed.Location = new System.Drawing.Point(125, 52);
             this.trackPrnSpeed.Maximum = 800;
@@ -1370,7 +1371,7 @@ namespace VSC
             this.lblPrnTemplate.Name = "lblPrnTemplate";
             this.lblPrnTemplate.Size = new System.Drawing.Size(107, 15);
             this.lblPrnTemplate.TabIndex = 5;
-            this.lblPrnTemplate.Text = "Template hiá»‡n táº¡i:";
+            this.lblPrnTemplate.Text = "Template hiện tại:";
 
             this.txtPrnTemplate.BackColor = System.Drawing.Color.FromArgb(40, 40, 56);
             this.txtPrnTemplate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1391,7 +1392,7 @@ namespace VSC
             this.chkPrnAutoAck.Name = "chkPrnAutoAck";
             this.chkPrnAutoAck.Size = new System.Drawing.Size(315, 19);
             this.chkPrnAutoAck.TabIndex = 7;
-            this.chkPrnAutoAck.Text = "Tá»± Ä‘á»™ng pháº£n há»“i ACK khi nháº­n DATA (DATA;RYES)";
+            this.chkPrnAutoAck.Text = "Tự động phản hồi ACK khi nhận DATA (DATA;RYES)";
             this.chkPrnAutoAck.UseVisualStyleBackColor = true;
 
             this.chkPrnAutoPrint.AutoSize = true;
@@ -1403,7 +1404,7 @@ namespace VSC
             this.chkPrnAutoPrint.Name = "chkPrnAutoPrint";
             this.chkPrnAutoPrint.Size = new System.Drawing.Size(325, 19);
             this.chkPrnAutoPrint.TabIndex = 8;
-            this.chkPrnAutoPrint.Text = "Tá»± Ä‘á»™ng in theo chu ká»³ tá»‘c Ä‘á»™ (Auto Stream RSFP)";
+            this.chkPrnAutoPrint.Text = "Tự động in theo chu kỳ tốc độ (Auto Stream RSFP)";
             this.chkPrnAutoPrint.UseVisualStyleBackColor = true;
 
             this.chkPrnInterlockCamera.AutoSize = true;
@@ -1415,7 +1416,7 @@ namespace VSC
             this.chkPrnInterlockCamera.Name = "chkPrnInterlockCamera";
             this.chkPrnInterlockCamera.Size = new System.Drawing.Size(387, 19);
             this.chkPrnInterlockCamera.TabIndex = 9;
-            this.chkPrnInterlockCamera.Text = "â¡ Tá»± Ä‘á»™ng liĂªn káº¿t Ä‘áº©y mĂ£ Ä‘Ă£ in sang Camera Keyence";
+            this.chkPrnInterlockCamera.Text = "⚡ Tự động liên kết đẩy mã đã in sang Camera Keyence";
             this.chkPrnInterlockCamera.UseVisualStyleBackColor = true;
 
             // 
@@ -1439,7 +1440,7 @@ namespace VSC
             this.grpPrinterAlarms.Size = new System.Drawing.Size(420, 240);
             this.grpPrinterAlarms.TabIndex = 2;
             this.grpPrinterAlarms.TabStop = false;
-            this.grpPrinterAlarms.Text = "Báº¢NG TIĂM Lá»–I MĂY IN (RSAL / STAR / TIMEOUT)";
+            this.grpPrinterAlarms.Text = "BẢNG TIÊM LỖI MÁY IN (RSAL / STAR / TIMEOUT)";
 
             this.lblRsalCode.AutoSize = true;
             this.lblRsalCode.Font = new System.Drawing.Font("Segoe UI", 8.5F);
@@ -1448,7 +1449,7 @@ namespace VSC
             this.lblRsalCode.Name = "lblRsalCode";
             this.lblRsalCode.Size = new System.Drawing.Size(140, 15);
             this.lblRsalCode.TabIndex = 0;
-            this.lblRsalCode.Text = "Chá»n mĂ£ cáº£nh bĂ¡o RSAL:";
+            this.lblRsalCode.Text = "Chọn mã cảnh báo RSAL:";
 
             this.cboRsalCode.BackColor = System.Drawing.Color.FromArgb(40, 40, 56);
             this.cboRsalCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1457,24 +1458,24 @@ namespace VSC
             this.cboRsalCode.ForeColor = System.Drawing.Color.White;
             this.cboRsalCode.FormattingEnabled = true;
             this.cboRsalCode.Items.AddRange(new object[] {
-            "001 - Over Speed Error (QuĂ¡ tá»‘c Ä‘á»™)",
-            "002 - Receive Data Timeout (Háº¿t giá» nháº­n)",
-            "003 - Delay Data Error (Trá»… dá»¯ liá»‡u)",
-            "004 - No Cartridge (KhĂ´ng cĂ³ há»™p má»±c)",
-            "005 - Invalid Cartridge (Há»™p má»±c khĂ´ng há»£p lá»‡)",
-            "006 - Lock Cartridge (Há»™p má»±c bá»‹ khĂ³a)",
-            "007 - Ink Out (Háº¿t má»±c)",
-            "008 - Ink Low (Má»±c sáº¯p háº¿t - Warning)",
-            "009 - Empty Data (Dá»¯ liá»‡u in trá»‘ng)",
-            "010 - Empty Buffer (Buffer mĂ¡y in trá»‘ng)",
-            "011 - Waiting Data (MĂ¡y in Ä‘ang chá» dá»¯ liá»‡u)",
-            "100 - Air Tank Overflow (Má»±c trĂ n bĂ¬nh khĂ­)",
-            "101 - Sub Tank Ink High Level (Má»±c sub tank cao)",
-            "104 - Pressure Sensor Error (Lá»—i Ă¡p suáº¥t ISS)",
-            "106 - Main Ink Tank Low (BĂ¬nh má»±c chĂ­nh sáº¯p háº¿t)",
-            "201 - Emergency Stop (Dá»«ng kháº©n cáº¥p)",
-            "203 - Safety Interlock Open (Cá»­a an toĂ n má»Ÿ)",
-            "205 - Power Failure (Máº¥t nguá»“n Ä‘iá»‡n)"});
+            "001 - Over Speed Error (Quá tốc độ)",
+            "002 - Receive Data Timeout (Hết giờ nhận)",
+            "003 - Delay Data Error (Trễ dữ liệu)",
+            "004 - No Cartridge (Không có hộp mực)",
+            "005 - Invalid Cartridge (Hộp mực không hợp lệ)",
+            "006 - Lock Cartridge (Hộp mực bị khóa)",
+            "007 - Ink Out (Hết mực)",
+            "008 - Ink Low (Mực sắp hết - Warning)",
+            "009 - Empty Data (Dữ liệu in trống)",
+            "010 - Empty Buffer (Buffer máy in trống)",
+            "011 - Waiting Data (Máy in đang chờ dữ liệu)",
+            "100 - Air Tank Overflow (Mực tràn bình khí)",
+            "101 - Sub Tank Ink High Level (Mực sub tank cao)",
+            "104 - Pressure Sensor Error (Lỗi áp suất ISS)",
+            "106 - Main Ink Tank Low (Bình mực chính sắp hết)",
+            "201 - Emergency Stop (Dừng khẩn cấp)",
+            "203 - Safety Interlock Open (Cửa an toàn mở)",
+            "205 - Power Failure (Mất nguồn điện)"});
             this.cboRsalCode.Location = new System.Drawing.Point(12, 45);
             this.cboRsalCode.Name = "cboRsalCode";
             this.cboRsalCode.Size = new System.Drawing.Size(280, 21);
@@ -1488,7 +1489,7 @@ namespace VSC
             this.btnSendRsal.Name = "btnSendRsal";
             this.btnSendRsal.Size = new System.Drawing.Size(115, 26);
             this.btnSendRsal.TabIndex = 2;
-            this.btnSendRsal.Text = "đŸ¨ TIĂM Lá»–I RSAL";
+            this.btnSendRsal.Text = "🚨 TIÊM LỖI RSAL";
             this.btnSendRsal.UseVisualStyleBackColor = false;
             this.btnSendRsal.Click += new System.EventHandler(this.btnSendRsal_Click);
 
@@ -1499,7 +1500,7 @@ namespace VSC
             this.lblStarResponse.Name = "lblStarResponse";
             this.lblStarResponse.Size = new System.Drawing.Size(119, 15);
             this.lblStarResponse.TabIndex = 3;
-            this.lblStarResponse.Text = "Pháº£n há»“i lá»‡nh STAR:";
+            this.lblStarResponse.Text = "Phản hồi lệnh STAR:";
 
             this.cboStarResponse.BackColor = System.Drawing.Color.FromArgb(40, 40, 56);
             this.cboStarResponse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1507,13 +1508,13 @@ namespace VSC
             this.cboStarResponse.ForeColor = System.Drawing.Color.White;
             this.cboStarResponse.FormattingEnabled = true;
             this.cboStarResponse.Items.AddRange(new object[] {
-            "STAR;OK (BĂ¬nh thÆ°á»ng)",
+            "STAR;OK (Bình thường)",
             "STAR;READY",
-            "STAR;ERR;005 (Äáº§u in máº¥t káº¿t ná»‘i)",
-            "STAR;ERR;007 (KhĂ´ng cĂ³ há»™p má»±c)",
-            "STAR;ERR;009 (Háº¿t má»±c)",
-            "STAR;ERR;015 (Má»±c tháº¥p)",
-            "STAR;ERR;018 (Xung Ä‘á»™t há»™p má»±c)"});
+            "STAR;ERR;005 (Đầu in mất kết nối)",
+            "STAR;ERR;007 (Không có hộp mực)",
+            "STAR;ERR;009 (Hết mực)",
+            "STAR;ERR;015 (Mực thấp)",
+            "STAR;ERR;018 (Xung đột hộp mực)"});
             this.cboStarResponse.Location = new System.Drawing.Point(140, 77);
             this.cboStarResponse.Name = "cboStarResponse";
             this.cboStarResponse.Size = new System.Drawing.Size(152, 23);
@@ -1527,7 +1528,7 @@ namespace VSC
             this.btnSendPlc001.Name = "btnSendPlc001";
             this.btnSendPlc001.Size = new System.Drawing.Size(195, 28);
             this.btnSendPlc001.TabIndex = 5;
-            this.btnSendPlc001.Text = "â¡ Báº®N XUNG PLC001 TRIGGER";
+            this.btnSendPlc001.Text = "⚡ BẮN XUNG PLC001 TRIGGER";
             this.btnSendPlc001.UseVisualStyleBackColor = false;
             this.btnSendPlc001.Click += new System.EventHandler(this.btnSendPlc001_Click);
 
@@ -1539,7 +1540,7 @@ namespace VSC
             this.btnPrnSimulateDrop.Name = "btnPrnSimulateDrop";
             this.btnPrnSimulateDrop.Size = new System.Drawing.Size(198, 28);
             this.btnPrnSimulateDrop.TabIndex = 6;
-            this.btnPrnSimulateDrop.Text = "đŸ”Œ MĂ” PHá»NG Rá»T Máº NG TCP";
+            this.btnPrnSimulateDrop.Text = "🔌 MÔ PHỎNG RỚT MẠNG TCP";
             this.btnPrnSimulateDrop.UseVisualStyleBackColor = false;
             this.btnPrnSimulateDrop.Click += new System.EventHandler(this.btnPrnSimulateDrop_Click);
 
@@ -1551,7 +1552,7 @@ namespace VSC
             this.btnPrnTestSyncTime.Name = "btnPrnTestSyncTime";
             this.btnPrnTestSyncTime.Size = new System.Drawing.Size(195, 26);
             this.btnPrnTestSyncTime.TabIndex = 7;
-            this.btnPrnTestSyncTime.Text = "â±ï¸ Test Gá»­i SET;RYES";
+            this.btnPrnTestSyncTime.Text = "⏱️ Test Gửi SET;RYES";
             this.btnPrnTestSyncTime.UseVisualStyleBackColor = false;
             this.btnPrnTestSyncTime.Click += new System.EventHandler(this.btnPrnTestSyncTime_Click);
 
@@ -1563,7 +1564,7 @@ namespace VSC
             this.btnPrnTestRollTime.Name = "btnPrnTestRollTime";
             this.btnPrnTestRollTime.Size = new System.Drawing.Size(198, 26);
             this.btnPrnTestRollTime.TabIndex = 8;
-            this.btnPrnTestRollTime.Text = "đŸ”„ Test Gá»­i RTIME;OK";
+            this.btnPrnTestRollTime.Text = "🔄 Test Gửi RTIME;OK";
             this.btnPrnTestRollTime.UseVisualStyleBackColor = false;
             this.btnPrnTestRollTime.Click += new System.EventHandler(this.btnPrnTestRollTime_Click);
 
@@ -1594,7 +1595,7 @@ namespace VSC
             this.grpPrintBuffer.Size = new System.Drawing.Size(921, 270);
             this.grpPrintBuffer.TabIndex = 0;
             this.grpPrintBuffer.TabStop = false;
-            this.grpPrintBuffer.Text = "Bá»˜ Äá»†M Dá»® LIá»†U IN Tá»ª R-LINK (PRINT BUFFER & FIFO QUEUE)";
+            this.grpPrintBuffer.Text = "BỘ ĐỆM DỮ LIỆU IN TỪ R-LINK (PRINT BUFFER & FIFO QUEUE)";
 
             this.pnlBufferStats.Controls.Add(this.lblPrnTotalRecv);
             this.pnlBufferStats.Controls.Add(this.lblPrnTotalPrinted);
@@ -1616,7 +1617,7 @@ namespace VSC
             this.lblPrnTotalRecv.Name = "lblPrnTotalRecv";
             this.lblPrnTotalRecv.Size = new System.Drawing.Size(81, 15);
             this.lblPrnTotalRecv.TabIndex = 0;
-            this.lblPrnTotalRecv.Text = "Tá»•ng nháº­n: 0";
+            this.lblPrnTotalRecv.Text = "Tổng nhận: 0";
 
             this.lblPrnTotalPrinted.AutoSize = true;
             this.lblPrnTotalPrinted.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
@@ -1625,7 +1626,7 @@ namespace VSC
             this.lblPrnTotalPrinted.Name = "lblPrnTotalPrinted";
             this.lblPrnTotalPrinted.Size = new System.Drawing.Size(51, 15);
             this.lblPrnTotalPrinted.TabIndex = 1;
-            this.lblPrnTotalPrinted.Text = "ÄĂ£ in: 0";
+            this.lblPrnTotalPrinted.Text = "Đã in: 0";
 
             this.lblPrnBufferCount.AutoSize = true;
             this.lblPrnBufferCount.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
@@ -1634,7 +1635,7 @@ namespace VSC
             this.lblPrnBufferCount.Name = "lblPrnBufferCount";
             this.lblPrnBufferCount.Size = new System.Drawing.Size(117, 15);
             this.lblPrnBufferCount.TabIndex = 2;
-            this.lblPrnBufferCount.Text = "Chá» trong Buffer: 0";
+            this.lblPrnBufferCount.Text = "Chờ trong Buffer: 0";
 
             this.btnPrnPrintNext.BackColor = System.Drawing.Color.FromArgb(94, 129, 172);
             this.btnPrnPrintNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1644,7 +1645,7 @@ namespace VSC
             this.btnPrnPrintNext.Name = "btnPrnPrintNext";
             this.btnPrnPrintNext.Size = new System.Drawing.Size(150, 26);
             this.btnPrnPrintNext.TabIndex = 3;
-            this.btnPrnPrintNext.Text = "â–¶ Báº¯n 1 MĂ£ (Print Next)";
+            this.btnPrnPrintNext.Text = "▶ Bắn 1 Mã (Print Next)";
             this.btnPrnPrintNext.UseVisualStyleBackColor = false;
             this.btnPrnPrintNext.Click += new System.EventHandler(this.btnPrnPrintNext_Click);
 
@@ -1656,7 +1657,7 @@ namespace VSC
             this.btnPrnClearBuffer.Name = "btnPrnClearBuffer";
             this.btnPrnClearBuffer.Size = new System.Drawing.Size(140, 26);
             this.btnPrnClearBuffer.TabIndex = 4;
-            this.btnPrnClearBuffer.Text = "XĂ³a HĂ ng Äá»£i (CLPB)";
+            this.btnPrnClearBuffer.Text = "Xóa Hàng Đợi (CLPB)";
             this.btnPrnClearBuffer.UseVisualStyleBackColor = false;
             this.btnPrnClearBuffer.Click += new System.EventHandler(this.btnPrnClearBuffer_Click);
 
@@ -1668,7 +1669,7 @@ namespace VSC
             this.btnPrnResetStats.Name = "btnPrnResetStats";
             this.btnPrnResetStats.Size = new System.Drawing.Size(90, 26);
             this.btnPrnResetStats.TabIndex = 5;
-            this.btnPrnResetStats.Text = "Reset Äáº¿m";
+            this.btnPrnResetStats.Text = "Reset Đếm";
             this.btnPrnResetStats.UseVisualStyleBackColor = false;
 
             this.prgPrnBuffer.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1709,7 +1710,7 @@ namespace VSC
             this.grpPrinterLog.Size = new System.Drawing.Size(921, 527);
             this.grpPrinterLog.TabIndex = 1;
             this.grpPrinterLog.TabStop = false;
-            this.grpPrinterLog.Text = "NHáº¬T KĂ TRAFFIC MĂY IN (RAW PACKET INSPECTOR [STX]...[ETX])";
+            this.grpPrinterLog.Text = "NHẬT KÝ TRAFFIC MÁY IN (RAW PACKET INSPECTOR [STX]...[ETX])";
 
             this.pnlPrnLogTools.Controls.Add(this.chkPrnAutoScroll);
             this.pnlPrnLogTools.Controls.Add(this.btnPrnClearLog);
@@ -1730,7 +1731,7 @@ namespace VSC
             this.chkPrnAutoScroll.Name = "chkPrnAutoScroll";
             this.chkPrnAutoScroll.Size = new System.Drawing.Size(73, 19);
             this.chkPrnAutoScroll.TabIndex = 0;
-            this.chkPrnAutoScroll.Text = "Tá»± cuá»™n";
+            this.chkPrnAutoScroll.Text = "Tự cuộn";
             this.chkPrnAutoScroll.UseVisualStyleBackColor = true;
 
             this.btnPrnClearLog.BackColor = System.Drawing.Color.FromArgb(67, 76, 94);
@@ -1741,7 +1742,7 @@ namespace VSC
             this.btnPrnClearLog.Name = "btnPrnClearLog";
             this.btnPrnClearLog.Size = new System.Drawing.Size(90, 24);
             this.btnPrnClearLog.TabIndex = 1;
-            this.btnPrnClearLog.Text = "XĂ³a Nháº­t KĂ½";
+            this.btnPrnClearLog.Text = "Xóa Nhật Ký";
             this.btnPrnClearLog.UseVisualStyleBackColor = false;
 
             this.btnPrnSaveLog.BackColor = System.Drawing.Color.FromArgb(67, 76, 94);
@@ -1752,7 +1753,7 @@ namespace VSC
             this.btnPrnSaveLog.Name = "btnPrnSaveLog";
             this.btnPrnSaveLog.Size = new System.Drawing.Size(90, 24);
             this.btnPrnSaveLog.TabIndex = 2;
-            this.btnPrnSaveLog.Text = "LÆ°u File Log";
+            this.btnPrnSaveLog.Text = "Lưu File Log";
             this.btnPrnSaveLog.UseVisualStyleBackColor = false;
 
             this.rtbPrinterLog.BackColor = System.Drawing.Color.FromArgb(18, 18, 26);
@@ -1779,7 +1780,7 @@ namespace VSC
             this.tabInterlock.Padding = new System.Windows.Forms.Padding(15);
             this.tabInterlock.Size = new System.Drawing.Size(1376, 817);
             this.tabInterlock.TabIndex = 2;
-            this.tabInterlock.Text = "â¡ DĂ¢y Chuyá»n TĂ­ch Há»£p (Line Interlock)";
+            this.tabInterlock.Text = "⚡ Dây Chuyền Tích Hợp (Line Interlock)";
 
             // 
             // grpInterlockOverview
@@ -1799,7 +1800,7 @@ namespace VSC
             this.grpInterlockOverview.Size = new System.Drawing.Size(1346, 180);
             this.grpInterlockOverview.TabIndex = 0;
             this.grpInterlockOverview.TabStop = false;
-            this.grpInterlockOverview.Text = "MĂ” PHá»NG DĂ‚Y CHUYá»€N Tá»”NG THá»‚ (CLOSED-LOOP VERIFY & PRINT SIMULATION)";
+            this.grpInterlockOverview.Text = "MÔ PHỎNG DÂY CHUYỀN TỔNG THỂ (CLOSED-LOOP VERIFY & PRINT SIMULATION)";
 
             this.lblInterlockTitle.AutoSize = true;
             this.lblInterlockTitle.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
@@ -1808,7 +1809,7 @@ namespace VSC
             this.lblInterlockTitle.Name = "lblInterlockTitle";
             this.lblInterlockTitle.Size = new System.Drawing.Size(787, 17);
             this.lblInterlockTitle.TabIndex = 0;
-            this.lblInterlockTitle.Text = "â¡ LUá»’NG LIĂN Há»¢P: R-Link [DATA] â” MĂ¡y In [RSFP] â” BÄƒng Táº£i Cháº¡y â” Camera Keyence [OCR/Barcode] â” R-Link So Khá»›p";
+            this.lblInterlockTitle.Text = "⚡ LUỒNG LIÊN HỢP: R-Link [DATA] ➔ Máy In [RSFP] ➔ Băng Tải Chạy ➔ Camera Keyence [OCR/Barcode] ➔ R-Link So Khớp";
 
             this.lblInterlockDesc.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.lblInterlockDesc.ForeColor = System.Drawing.Color.Gainsboro;
@@ -1816,7 +1817,7 @@ namespace VSC
             this.lblInterlockDesc.Name = "lblInterlockDesc";
             this.lblInterlockDesc.Size = new System.Drawing.Size(1100, 45);
             this.lblInterlockDesc.TabIndex = 1;
-            this.lblInterlockDesc.Text = "Khi cháº¿ Ä‘á»™ liĂªn káº¿t Ä‘Æ°á»£c kĂ­ch hoáº¡t, báº¥t ká»³ báº£n tin in nĂ o Ä‘Æ°á»£c mĂ¡y in xáº£ ra qua gĂ³i RSFP sáº½ tá»± Ä‘á»™ng Ä‘Æ°á»£c chuyá»ƒn tiáº¿p sang Camera Keyence sau má»™t khoáº£ng trá»… bÄƒng táº£i (Conveyor Delay).\r\nCamera sáº½ gá»­i mĂ£ vá»«a in vá» pháº§n má»m R-Link Ä‘á»ƒ thá»±c hiá»‡n quy trĂ¬nh So khá»›p & XĂ¡c thá»±c (Verify and Compare) hoĂ n chá»‰nh mĂ  khĂ´ng cáº§n láº¯p rĂ¡p thiáº¿t bá»‹ pháº§n cá»©ng tháº­t.";
+            this.lblInterlockDesc.Text = "Khi chế độ liên kết được kích hoạt, bất kỳ bản tin in nào được máy in xả ra qua gói RSFP sẽ tự động được chuyển tiếp sang Camera Keyence sau một khoảng trễ băng tải (Conveyor Delay).\\r\\nCamera sẽ gửi mã vừa in về phần mềm R-Link để thực hiện quy trình So khớp & Xác thực (Verify and Compare) hoàn chỉnh mà không cần lắp ráp thiết bị phần cứng thật.";
 
             this.btnStartFullLineSim.BackColor = System.Drawing.Color.FromArgb(46, 139, 87);
             this.btnStartFullLineSim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1826,7 +1827,7 @@ namespace VSC
             this.btnStartFullLineSim.Name = "btnStartFullLineSim";
             this.btnStartFullLineSim.Size = new System.Drawing.Size(320, 35);
             this.btnStartFullLineSim.TabIndex = 2;
-            this.btnStartFullLineSim.Text = "đŸ€ Báº®T Äáº¦U MĂ” PHá»NG TOĂ€N DĂ‚Y CHUYá»€N (START BOTH)";
+            this.btnStartFullLineSim.Text = "🚀 BẮT ĐẦU MÔ PHỎNG TOÀN DÂY CHUYỀN (START BOTH)";
             this.btnStartFullLineSim.UseVisualStyleBackColor = false;
 
             this.btnStopFullLineSim.BackColor = System.Drawing.Color.FromArgb(191, 97, 106);
@@ -1837,7 +1838,7 @@ namespace VSC
             this.btnStopFullLineSim.Name = "btnStopFullLineSim";
             this.btnStopFullLineSim.Size = new System.Drawing.Size(200, 35);
             this.btnStopFullLineSim.TabIndex = 3;
-            this.btnStopFullLineSim.Text = "â¹ Dá»ªNG Táº¤T Cáº¢ SERVER";
+            this.btnStopFullLineSim.Text = "⏹ DỪNG TẤT CẢ SERVER";
             this.btnStopFullLineSim.UseVisualStyleBackColor = false;
 
             this.lblLineSimStatus.AutoSize = true;
@@ -1847,7 +1848,7 @@ namespace VSC
             this.lblLineSimStatus.Name = "lblLineSimStatus";
             this.lblLineSimStatus.Size = new System.Drawing.Size(188, 15);
             this.lblLineSimStatus.TabIndex = 4;
-            this.lblLineSimStatus.Text = "Tráº¡ng thĂ¡i liĂªn há»£p: Sáºµn sĂ ng.";
+            this.lblLineSimStatus.Text = "Trạng thái liên hợp: Sẵn sàng.";
 
             this.prgLineSim.Location = new System.Drawing.Point(15, 148);
             this.prgLineSim.Name = "prgLineSim";
@@ -1868,7 +1869,7 @@ namespace VSC
             this.grpInterlockStats.Size = new System.Drawing.Size(1346, 607);
             this.grpInterlockStats.TabIndex = 1;
             this.grpInterlockStats.TabStop = false;
-            this.grpInterlockStats.Text = "THá»NG KĂ DĂ‚Y CHUYá»€N THá»œI GIAN THá»°C & GIĂM SĂT TOĂ€N DIá»†N";
+            this.grpInterlockStats.Text = "THỐNG KÊ DÂY CHUYỀN THỜI GIAN THỰC & GIÁM SÁT TOÀN DIỆN";
 
             this.pnlStatsBar.Controls.Add(this.lblLinePrintedCount);
             this.pnlStatsBar.Controls.Add(this.lblLineVerifiedCount);
@@ -1887,7 +1888,7 @@ namespace VSC
             this.lblLinePrintedCount.Name = "lblLinePrintedCount";
             this.lblLinePrintedCount.Size = new System.Drawing.Size(164, 15);
             this.lblLinePrintedCount.TabIndex = 0;
-            this.lblLinePrintedCount.Text = "MĂ¡y In ÄĂ£ Xáº£: 0 sáº£n pháº©m";
+            this.lblLinePrintedCount.Text = "Máy In Đã Xả: 0 sản phẩm";
 
             this.lblLineVerifiedCount.AutoSize = true;
             this.lblLineVerifiedCount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -1896,7 +1897,7 @@ namespace VSC
             this.lblLineVerifiedCount.Name = "lblLineVerifiedCount";
             this.lblLineVerifiedCount.Size = new System.Drawing.Size(167, 15);
             this.lblLineVerifiedCount.TabIndex = 1;
-            this.lblLineVerifiedCount.Text = "Camera ÄĂ£ Äá»c: 0 sáº£n pháº©m";
+            this.lblLineVerifiedCount.Text = "Camera Đã Đọc: 0 sản phẩm";
 
             this.lblLineMatchRate.AutoSize = true;
             this.lblLineMatchRate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -1905,7 +1906,7 @@ namespace VSC
             this.lblLineMatchRate.Name = "lblLineMatchRate";
             this.lblLineMatchRate.Size = new System.Drawing.Size(117, 15);
             this.lblLineMatchRate.TabIndex = 2;
-            this.lblLineMatchRate.Text = "Tá»· Lá»‡ Khá»›p: 100.0%";
+            this.lblLineMatchRate.Text = "Tỷ Lệ Khớp: 100.0%";
 
             this.lblLineNgCount.AutoSize = true;
             this.lblLineNgCount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -1914,7 +1915,7 @@ namespace VSC
             this.lblLineNgCount.Name = "lblLineNgCount";
             this.lblLineNgCount.Size = new System.Drawing.Size(96, 15);
             this.lblLineNgCount.TabIndex = 3;
-            this.lblLineNgCount.Text = "Lá»—i NG In/Äá»c: 0";
+            this.lblLineNgCount.Text = "Lỗi NG In/Đọc: 0";
 
             this.rtbInterlockLog.BackColor = System.Drawing.Color.FromArgb(18, 18, 26);
             this.rtbInterlockLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
